@@ -1,10 +1,8 @@
 body {
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
-}
-
-html {
-  height: -webkit-fill-available;
+  min-height: auto;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 main {
@@ -14,6 +12,21 @@ main {
   max-height: 100vh;
   overflow-x: auto;
   overflow-y: hidden;
+}
+
+.main-container{
+  display: flex;
+}
+
+.sidebar {
+  width: auto;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
 }
 
 .b-example-divider {
@@ -86,3 +99,28 @@ main {
 
 .fw-semibold { font-weight: 600; }
 .lh-tight { line-height: 1.25; }
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #0088ff;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right bottom, rgb(0, 136, 255), rgb(255, 3, 105));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right bottom, rgb(0, 136, 255), rgb(255, 3, 105))
+}

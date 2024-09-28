@@ -25,15 +25,15 @@ public class LoginServlet extends HttpServlet {
             Usuario usuario = dao.getUsuarioByUsernamePassword(username, password);
             if (usuario == null){
                req.setAttribute("error", "Usuario o contraseña incorrectos.");
-               req.getRequestDispatcher("index.jsp").forward(req, resp);
+               req.getRequestDispatcher("login.jsp").forward(req, resp);
             }else {
                 HttpSession session = req.getSession();
                 session.setAttribute("usuario", usuario);
-                resp.sendRedirect("inicio.jsp");
+                resp.sendRedirect("index.jsp");
             }
         }else {
             req.setAttribute("error", "Debe ingresar un nombre de usuario y una contraseña.");
-            req.getRequestDispatcher("index.jsp").forward(req, resp);
+            req.getRequestDispatcher("login.jsp").forward(req, resp);
         }
     }
 }

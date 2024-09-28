@@ -36,7 +36,7 @@ public class UsuarioServlet extends HttpServlet {
                     mostrarFormulario(req, resp);
                     break;
                 default:
-                    resp.sendRedirect("inicio.jsp");
+                    resp.sendRedirect("index.jsp");
                     break;
             }
         }
@@ -54,7 +54,7 @@ public class UsuarioServlet extends HttpServlet {
                     editar(req, resp);
                     break;
                 default:
-                    resp.sendRedirect("inicio.jsp");
+                    resp.sendRedirect("index.jsp");
                     break;
             }
         }
@@ -107,8 +107,8 @@ public class UsuarioServlet extends HttpServlet {
     }
 
     private void listar(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-        List<Usuario> usuarioList = service.obtenerUsuarios();
-        req.setAttribute("usuarios", usuarioList);
-        req.getRequestDispatcher("listar-usuarios.jsp");
+        List<Usuario> usuarios = service.obtenerUsuarios();
+        req.setAttribute("usuarios", usuarios);
+        req.getRequestDispatcher("listar-usuarios.jsp").forward(req, resp);
     }
 }
